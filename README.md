@@ -1,7 +1,8 @@
 # FlashCards
-A app to help people memorise things made in MERN stack
+## A app to help people memorise things made in MERN stack
 
 Follow following to successfuly run it on your system:
+
 Prerequisites:
 1. Install node.js and npm(https://nodejs.org/en/download/) on your system.
 2. Install Mongodb on your system(refer to mongodb documentation) or just sign up for mongodb atlas(make sure your database is running successfully)
