@@ -1,0 +1,32 @@
+.input {
+    margin: auto;
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    padding: 20px;
+}
+
+.input textarea {
+    height: 20vh;
+}
+
+@media (min-width: 300px) {
+    .input {
+        width: 90%;
+    }
+}
+
+@media (min-width: 720px) {
+    .input {
+        width: 50%;
+    }
+}
+
+@media (min-width: 960px) {
+    .input {
+        width: 40%;
+    }
+}

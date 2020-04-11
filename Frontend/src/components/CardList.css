@@ -1,0 +1,15 @@
+.card-header>i {
+    cursor: pointer;
+}
+
+.card-header {
+    padding: 0.40rem 1rem;
+}
+
+.cardsList {
+    margin: 30px 0;
+}
+
+.card {
+    margin: 10px 0;
+}
