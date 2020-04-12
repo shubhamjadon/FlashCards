@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './CardList.css';
+import ReactHtmlParser from 'react-html-parser';
 
 export default class CardList extends Component {
 
@@ -19,8 +20,8 @@ export default class CardList extends Component {
 					<i className="material-icons float-right" onClick={ () => this.props.deleteCard(card._id)}>delete</i>
 				</div>
 				<div className={`card-body ${card.color}`} onClick={() => this.props.updateCard(index)}>
-					<h5 className="card-title">{card.question}</h5>
-					<p className="card-text" style={{ display: (card.show) ? 'block' : 'none' }}>{card.answer}</p>
+					<h5 className="card-title">{ReactHtmlParser(card.question)}</h5>
+					<p className="card-text" style={{ display: (card.show) ? 'block' : 'none' }}>{ReactHtmlParser(card.answer)}</p>
 				</div>
 			</div>;
 			if(j == 0){

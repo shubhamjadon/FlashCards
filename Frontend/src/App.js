@@ -27,6 +27,18 @@ export default class App extends Component {
 
 	componentDidMount() {
 		db.getCards((cards)=>this.changeCardState(cards));
+		document.addEventListener('keydown', (e) => {
+			if(e.key == 'Escape'){
+				if(this.state.edit && this.state.form){
+					this.setState({AddOrEdit: 'ADD'});
+					this.question.current.value = '';
+					this.answer.current.value = '';
+					this.setState({edit: false});
+				}
+                
+				this.setState({form: false, blur: false});
+			}
+		});
 	}
 	
     
@@ -72,7 +84,7 @@ export default class App extends Component {
 	}
     
 	toggleForm() {
-		let btn_msg, form, blur;
+		let form, blur;
 		if(this.state.edit && this.state.form){
 			this.setState({AddOrEdit: 'ADD'});
 			this.question.current.value = '';
@@ -80,11 +92,11 @@ export default class App extends Component {
 			this.setState({edit: false});
 		}
         
-		btn_msg = (this.state.form) ?  'ADD': 'CLOSE';
+		
 		form = (this.state.form) ? false : true;
 		blur = (this.state.form) ? false : true;
         
-		this.setState({form, btn_msg, blur});
+		this.setState({form, blur});
 	}
     
 	deleteCard(id) {
